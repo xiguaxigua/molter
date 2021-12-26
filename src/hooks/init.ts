@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { initCode } from "../store/features/code-slice";
+import { setId } from "../store/features/project-slice";
 import { cloneDeep } from "../utils/clone";
 import { DEFAULT_CODE } from "../utils/constants";
 import { dbAdd, dbFind } from "../utils/db";
@@ -19,6 +20,7 @@ function useInit() {
         silentAddURLQuery({ mid });
         const codeData = cloneDeep<typeof DEFAULT_CODE>(DEFAULT_CODE);
         dispatch(initCode(codeData));
+        dispatch(setId({ id: mid }));
         dbAdd({ mid, code: codeData, options: {} });
       } else {
         // 发现 url 中的 mid，走查询流程
@@ -27,6 +29,7 @@ function useInit() {
           console.log("数据未找到");
         } else {
           dispatch(initCode(data.code));
+          dispatch(setId({ id: mid }));
         }
       }
     })();

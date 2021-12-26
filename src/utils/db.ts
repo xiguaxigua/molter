@@ -1,5 +1,6 @@
 import Dexie from "dexie";
 import { CodeType, OptionType } from "../store/types";
+import throttle from "lodash/throttle";
 
 interface DataType {
   id?: number;
@@ -23,14 +24,19 @@ class DB extends Dexie {
 const db = new DB();
 
 function dbAdd(dbData: DataType) {
+  console.log("dbAdd", dbData);
   db.dbData.add(dbData);
 }
 
-function dbPut(dbData: DataType) {
-  db.dbData.put(dbData);
+async function dbPut(dbData: DataType) {
+  console.log("dbPut", dbData);
+  const result = (await dbFind(dbData.mid)) as any;
+  console.log("result", result);
+  db.dbData.put({ ...dbData, id: result.id });
 }
 
 function dbFind(mid: string) {
+  console.log("dbFind", mid);
   return new Promise((resolve, reject) => {
     db.dbData
       .where("mid")
@@ -43,7 +49,10 @@ function dbFind(mid: string) {
 }
 
 function dbDelete(mid: string) {
+  console.log("dbDelete", mid);
   return db.dbData.where("mid").equals(mid).delete();
 }
 
-export { dbAdd, dbPut, dbFind, dbDelete };
+const dbSlowPut = throttle((dbData: DataType) => dbPut(dbData), 300);
+
+export { dbAdd, dbPut, dbFind, dbDelete, dbSlowPut };
