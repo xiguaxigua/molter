@@ -1,6 +1,7 @@
 import { FC } from "react";
 import MonacoEditor from "react-monaco-editor";
 import * as monaco from "monaco-editor";
+import { emmetHTML, emmetCSS, emmetJSX } from "emmet-monaco-es";
 
 import "./style.scss";
 
@@ -22,6 +23,10 @@ monaco.languages.typescript.typescriptDefaults.setDiagnosticsOptions({
   noSemanticValidation: false,
   noSyntaxValidation: true,
 });
+
+emmetHTML(monaco);
+emmetCSS(monaco);
+emmetJSX(monaco);
 
 interface CodeProps {
   /** 语言 */
