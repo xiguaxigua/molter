@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/molter/static/css/main.10b15bdc.css",
-    "main.js": "/molter/static/js/main.706dcbd7.js",
+    "main.js": "/molter/static/js/main.63b6a066.js",
     "static/js/5558.962b9aea.chunk.js": "/molter/static/js/5558.962b9aea.chunk.js",
     "static/js/1324.d1eb9137.chunk.js": "/molter/static/js/1324.d1eb9137.chunk.js",
     "static/js/1258.2a8e4dfd.chunk.js": "/molter/static/js/1258.2a8e4dfd.chunk.js",
@@ -90,7 +90,7 @@
     "static/media/codicon.ttf": "/molter/static/media/codicon.56dba998166ea5a0ca7f.ttf",
     "index.html": "/molter/index.html",
     "main.10b15bdc.css.map": "/molter/static/css/main.10b15bdc.css.map",
-    "main.706dcbd7.js.map": "/molter/static/js/main.706dcbd7.js.map",
+    "main.63b6a066.js.map": "/molter/static/js/main.63b6a066.js.map",
     "5558.962b9aea.chunk.js.map": "/molter/static/js/5558.962b9aea.chunk.js.map",
     "1324.d1eb9137.chunk.js.map": "/molter/static/js/1324.d1eb9137.chunk.js.map",
     "1258.2a8e4dfd.chunk.js.map": "/molter/static/js/1258.2a8e4dfd.chunk.js.map",
@@ -174,6 +174,6 @@
   },
   "entrypoints": [
     "static/css/main.10b15bdc.css",
-    "static/js/main.706dcbd7.js"
+    "static/js/main.63b6a066.js"
   ]
 }
