@@ -6,8 +6,9 @@ const store = configureStore({
     code: codeSlice.reducer,
   },
 });
+type RootState = ReturnType<typeof store.getState>;
 
 (window as any).__store__ = store;
-type RootState = ReturnType<typeof store.getState>;
+
 export { store };
 export type { RootState };
