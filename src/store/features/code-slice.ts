@@ -17,9 +17,14 @@ const codeSlice = createSlice({
     setJs(state, { payload }) {
       state.js = payload.code;
     },
+    initCode(state, { payload }) {
+      state.html = payload.html;
+      state.css = payload.css;
+      state.js = payload.js;
+    },
   },
 });
 
-const { setHtml, setCss, setJs } = codeSlice.actions;
+const { setHtml, setCss, setJs, initCode } = codeSlice.actions;
 
-export { setHtml, setCss, setJs, codeSlice };
+export { setHtml, setCss, setJs, initCode, codeSlice };

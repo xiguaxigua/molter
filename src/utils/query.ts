@@ -1,10 +1,8 @@
 /** URL 参数 */
 interface Query {
   /** 唯一标识 */
-  id: number;
+  mid: string;
 }
-
-addQuery({ id: 123 });
 
 /**
  * 获取 URL 中的参数
